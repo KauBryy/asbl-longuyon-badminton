@@ -7,6 +7,7 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Club from "./pages/Club";
 import Training from "./pages/Training";
+import Licences from "./pages/Licences";
 import Competitions from "./pages/Competitions";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -21,12 +22,13 @@ const App = () => (
       <BrowserRouter>
         <Layout>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/club" element={<Club />} />
-            <Route path="/entrainements" element={<Training />} />
-            <Route path="/competitions" element={<Competitions />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NotFound />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/club" element={<Club />} />
+        <Route path="/entrainements" element={<Training />} />
+        <Route path="/licences" element={<Licences />} />
+        <Route path="/competitions" element={<Competitions />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
       </BrowserRouter>

@@ -33,7 +33,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative h-[40vh] flex items-center justify-center bg-gradient-to-r from-primary to-accent text-white">
+      <section className="relative h-[40vh] flex items-center justify-center bg-gradient-to-r from-primary to-secondary text-white">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in-up">Contact</h1>
           <p className="text-xl md:text-2xl animate-fade-in">Rejoignez-nous dès maintenant</p>
@@ -63,9 +63,9 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold mb-2">Adresse</h3>
                       <p className="text-muted-foreground">
-                        Gymnase Jean Bouin
+                        Salle des Sports Léo Lagrange
                         <br />
-                        Rue du Stade
+                        Avenue du Général de Gaulle
                         <br />
                         54260 Longuyon, France
                       </p>
@@ -81,10 +81,10 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold mb-2">Email</h3>
                       <a
-                        href="mailto:contact@badminton-longuyon.com"
+                        href="mailto:bad.longuyon@gmail.com"
                         className="text-primary hover:underline"
                       >
-                        contact@badminton-longuyon.com
+                        bad.longuyon@gmail.com
                       </a>
                     </div>
                   </div>
@@ -97,8 +97,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-2">Téléphone</h3>
-                      <a href="tel:+33600000000" className="text-primary hover:underline">
-                        06 XX XX XX XX
+                      <a href="tel:+33611616166" className="text-primary hover:underline">
+                        06. 11. 61. 61. 66
                       </a>
                     </div>
                   </div>
@@ -109,7 +109,7 @@ const Contact = () => {
                 <h3 className="font-semibold mb-4">Suivez-nous</h3>
                 <div className="flex gap-3">
                   <a
-                    href="https://facebook.com"
+                    href="https://www.facebook.com/profile.php?id=61568507453892"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 rounded-lg bg-primary/10 hover:bg-primary text-primary hover:text-white flex items-center justify-center transition-all"
@@ -117,13 +117,32 @@ const Contact = () => {
                     <Facebook size={24} />
                   </a>
                   <a
-                    href="https://instagram.com/badminton_longuyon"
+                    href="https://www.instagram.com/badminton_longuyon/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 rounded-lg bg-primary/10 hover:bg-primary text-primary hover:text-white flex items-center justify-center transition-all"
                   >
                     <Instagram size={24} />
                   </a>
+                </div>
+              </div>
+
+              {/* Bureau Members */}
+              <div className="mt-8">
+                <h3 className="font-semibold mb-4">Les membres du bureau</h3>
+                <div className="space-y-3">
+                  <Card className="p-4">
+                    <p className="font-semibold">Gabriel Hillard</p>
+                    <p className="text-sm text-muted-foreground">Président de l'ASBL</p>
+                  </Card>
+                  <Card className="p-4">
+                    <p className="font-semibold">Stéphanie Cuel-Oller</p>
+                    <p className="text-sm text-muted-foreground">Trésorière de l'ASBL</p>
+                  </Card>
+                  <Card className="p-4">
+                    <p className="font-semibold">Marion Ambroisine</p>
+                    <p className="text-sm text-muted-foreground">Secrétaire de l'ASBL</p>
+                  </Card>
                 </div>
               </div>
             </div>
@@ -201,11 +220,17 @@ const Contact = () => {
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-center">Nous trouver</h2>
             <Card className="overflow-hidden">
-              <div className="aspect-video bg-muted-foreground/20 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-primary mx-auto mb-2" />
-                  <p className="text-muted-foreground">Carte interactive - Gymnase Jean Bouin, Longuyon</p>
-                </div>
+              <div className="aspect-video bg-muted-foreground/20 flex items-center justify-center overflow-hidden">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2601.8!2d5.6!3d49.55!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x860dd623fdab50a9%3A0x7ed5d778ff03d98e!2sSalle%20des%20Sports%20L%C3%A9o%20Lagrange!5e0!3m2!1sfr!2sfr!4v1234567890"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Salle des Sports Léo Lagrange"
+                ></iframe>
               </div>
             </Card>
           </div>

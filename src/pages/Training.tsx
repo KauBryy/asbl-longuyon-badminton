@@ -5,37 +5,25 @@ import courtImage from "@/assets/court-aerial.jpg";
 const Training = () => {
   const schedules = [
     {
-      category: "Jeunes (8-12 ans)",
+      category: "Jeu Libre",
       day: "Mercredi",
-      time: "14h00 - 15h30",
-      level: "Débutant à Intermédiaire",
+      time: "20h30 - 22h30",
+      level: "Tous niveaux (coach possible sur demande)",
     },
     {
-      category: "Ados (13-17 ans)",
-      day: "Mercredi",
-      time: "15h30 - 17h00",
-      level: "Tous niveaux",
-    },
-    {
-      category: "Adultes Loisir",
+      category: "Jeu Libre",
       day: "Vendredi",
-      time: "19h00 - 21h00",
-      level: "Débutant à Intermédiaire",
-    },
-    {
-      category: "Adultes Compétition",
-      day: "Mardi",
-      time: "20h00 - 22h00",
-      level: "Confirmé",
+      time: "20h30 - 22h30",
+      level: "Tous niveaux",
     },
   ];
 
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative h-[40vh] flex items-center justify-center bg-gradient-to-r from-secondary to-primary text-white">
+      <section className="relative h-[40vh] flex items-center justify-center bg-gradient-to-r from-primary to-secondary text-white">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in-up">Entraînements</h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in-up">Informations Pratiques</h1>
           <p className="text-xl md:text-2xl animate-fade-in">Horaires et lieux de pratique</p>
         </div>
       </section>
@@ -99,14 +87,23 @@ const Training = () => {
                     <MapPin className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-xl mb-2">Gymnase Jean Bouin</h3>
+                    <h3 className="font-bold text-xl mb-2">Salle des Sports Léo Lagrange</h3>
                     <p className="text-muted-foreground mb-2">
-                      Rue du Stade
+                      Avenue du Général de Gaulle
                       <br />
                       54260 Longuyon
                       <br />
                       France
                     </p>
+                    <a 
+                      href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x860dd623fdab50a9:0x7ed5d778ff03d98e?sa=X&ved=1t:8290&ictx=111&ucbcb=1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:underline inline-flex items-center gap-1 mt-2"
+                    >
+                      Voir sur Google Maps
+                      <MapPin className="w-4 h-4" />
+                    </a>
                   </div>
                 </div>
 
@@ -115,7 +112,11 @@ const Training = () => {
                   <ul className="space-y-2 text-muted-foreground">
                     <li className="flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-primary"></span>
-                      <span>4 terrains de badminton</span>
+                      <span>4 terrains de badminton double</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-primary"></span>
+                      <span>2 terrains simples</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-primary"></span>
@@ -125,17 +126,13 @@ const Training = () => {
                       <span className="w-2 h-2 rounded-full bg-primary"></span>
                       <span>Parking gratuit</span>
                     </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-primary"></span>
-                      <span>Accès handicapés</span>
-                    </li>
                   </ul>
                 </Card>
 
                 <Card className="p-6 bg-primary text-white">
-                  <h4 className="font-semibold mb-2">Première séance gratuite !</h4>
+                  <h4 className="font-semibold mb-2">3 séances d'essai gratuites !</h4>
                   <p className="text-white/90">
-                    Venez essayer le badminton gratuitement lors d'une séance découverte. Matériel fourni.
+                    Scannez le QR code mis à disposition dans la salle pour profiter de 3 séances d'essai gratuites.
                   </p>
                 </Card>
               </div>
@@ -152,15 +149,15 @@ const Training = () => {
             {[
               {
                 title: "Matériel",
-                description: "Raquettes et volants disponibles pour les débutants",
+                description: "Possibilité de prêt de raquette. Volants hybrides fournis.",
               },
               {
                 title: "Tenue",
-                description: "Tenue de sport et chaussures d'intérieur obligatoires",
+                description: "Chaussures de sport propres obligatoires",
               },
               {
                 title: "Inscription",
-                description: "Licence FFBAD obligatoire pour les compétiteurs",
+                description: "Licence FFBAD obligatoire - voir page 'Nos Licences'",
               },
             ].map((info, index) => (
               <Card
