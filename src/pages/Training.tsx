@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Clock, MapPin, Users } from "lucide-react";
-import courtImage from "@/assets/court-aerial.jpg";
+import trainingImage from "@/assets/training-action.jpg";
 
 const Training = () => {
   const schedules = [
@@ -80,8 +80,8 @@ const Training = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
               <img
-                src={courtImage}
-                alt="Terrain de badminton"
+                src={trainingImage}
+                alt="Entraînement de badminton à Longuyon"
                 className="rounded-2xl shadow-2xl w-full h-auto"
               />
             </div>

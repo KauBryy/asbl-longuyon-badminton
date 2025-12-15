@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ExternalLink } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoClub from "@/assets/logo-club.png";
 
@@ -13,9 +13,8 @@ const Header = () => {
     { name: "Le Club", path: "/club" },
     { name: "Informations Pratiques", path: "/entrainements" },
     { name: "Nos Licences", path: "/licences" },
-    { name: "Compétitions", path: "/competitions" },
+    { name: "Boutique", path: "/boutique" },
     { name: "Contact", path: "/contact" },
-    { name: "Boutique", path: "https://www.badminton-longuyon.com/category/all-products", external: true },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -39,32 +38,19 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => 
-              link.external ? (
-                <a
-                  key={link.path}
-                  href={link.path}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-lg font-medium transition-all text-foreground hover:text-primary hover:bg-muted flex items-center gap-2"
-                >
-                  {link.name}
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-              ) : (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`px-4 py-2 rounded-lg font-medium transition-all ${
-                    isActive(link.path)
-                      ? "text-primary bg-primary/10"
-                      : "text-foreground hover:text-primary hover:bg-muted"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              )
-            )}
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                  isActive(link.path)
+                    ? "text-primary bg-primary/10"
+                    : "text-foreground hover:text-primary hover:bg-muted"
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
           </nav>
 
           {/* CTA Button */}
@@ -87,34 +73,20 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <nav className="lg:hidden py-4 animate-fade-in">
-            {navLinks.map((link) => 
-              link.external ? (
-                <a
-                  key={link.path}
-                  href={link.path}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block px-4 py-3 rounded-lg font-medium transition-all text-foreground hover:text-primary hover:bg-muted flex items-center gap-2"
-                >
-                  {link.name}
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-              ) : (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`block px-4 py-3 rounded-lg font-medium transition-all ${
-                    isActive(link.path)
-                      ? "text-primary bg-primary/10"
-                      : "text-foreground hover:text-primary hover:bg-muted"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              )
-            )}
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                onClick={() => setIsMenuOpen(false)}
+                className={`block px-4 py-3 rounded-lg font-medium transition-all ${
+                  isActive(link.path)
+                    ? "text-primary bg-primary/10"
+                    : "text-foreground hover:text-primary hover:bg-muted"
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
             <div className="px-4 pt-4">
               <Button asChild size="lg" className="w-full bg-accent hover:bg-accent/90">
                 <Link to="/contact">Rejoignez-nous</Link>
