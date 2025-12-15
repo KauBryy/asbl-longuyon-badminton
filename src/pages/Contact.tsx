@@ -98,7 +98,7 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold mb-2">Téléphone</h3>
                       <a href="tel:+33611616166" className="text-primary hover:underline">
-                        06. 11. 61. 61. 66
+                        +33 6 11 61 61 66
                       </a>
                     </div>
                   </div>
@@ -109,7 +109,7 @@ const Contact = () => {
                 <h3 className="font-semibold mb-4">Suivez-nous</h3>
                 <div className="flex gap-3">
                   <a
-                    href="https://www.facebook.com/profile.php?id=61568507453892"
+                    href="https://www.facebook.com/share/1aGGikfTeq/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 rounded-lg bg-primary/10 hover:bg-primary text-primary hover:text-white flex items-center justify-center transition-all"
@@ -142,6 +142,14 @@ const Contact = () => {
                   <Card className="p-4">
                     <p className="font-semibold">Marion Ambroisine</p>
                     <p className="text-sm text-muted-foreground">Secrétaire de l'ASBL</p>
+                  </Card>
+                  <Card className="p-4">
+                    <p className="font-semibold">Kévin Sanem</p>
+                    <p className="text-sm text-muted-foreground">Responsable compétitions de l'ASBL</p>
+                  </Card>
+                  <Card className="p-4">
+                    <p className="font-semibold">Élise Marchesi</p>
+                    <p className="text-sm text-muted-foreground">Responsable communication de l'ASBL</p>
                   </Card>
                 </div>
               </div>

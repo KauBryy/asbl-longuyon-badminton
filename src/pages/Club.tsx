@@ -1,13 +1,15 @@
 import { Card } from "@/components/ui/card";
 import { User } from "lucide-react";
-import trainingImage from "@/assets/training-session.jpg";
+import teamPhoto from "@/assets/team-photo.jpg";
+import gabrielPhoto from "@/assets/gabriel-hillard.jpg";
 
 const Club = () => {
   const bureau = [
-    { name: "Jean Dupont", role: "Président", initials: "JD" },
-    { name: "Marie Martin", role: "Secrétaire", initials: "MM" },
-    { name: "Pierre Durand", role: "Trésorier", initials: "PD" },
-    { name: "Sophie Bernard", role: "Responsable jeunes", initials: "SB" },
+    { name: "Gabriel Hillard", role: "Président", photo: gabrielPhoto },
+    { name: "Stéphanie Cuel-Oller", role: "Trésorière", photo: null },
+    { name: "Marion Ambroisine", role: "Secrétaire", photo: null },
+    { name: "Kévin Sanem", role: "Responsable compétitions", photo: null },
+    { name: "Élise Marchesi", role: "Responsable communication", photo: null },
   ];
 
   return (
@@ -47,8 +49,8 @@ const Club = () => {
             </div>
             <div className="animate-fade-in">
               <img
-                src={trainingImage}
-                alt="Entraînement de badminton"
+                src={teamPhoto}
+                alt="L'équipe de l'AS Badminton Longuyon"
                 className="rounded-2xl shadow-2xl w-full h-auto"
               />
             </div>
@@ -64,16 +66,24 @@ const Club = () => {
             <p className="text-xl text-muted-foreground">L'équipe dirigeante du club</p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {bureau.map((member, index) => (
               <Card
                 key={index}
                 className="p-6 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                  <span className="text-white font-bold text-2xl">{member.initials}</span>
-                </div>
+                {member.photo ? (
+                  <img 
+                    src={member.photo} 
+                    alt={member.name}
+                    className="w-24 h-24 mx-auto mb-4 rounded-full object-cover"
+                  />
+                ) : (
+                  <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                    <User className="w-10 h-10 text-white" />
+                  </div>
+                )}
                 <h3 className="text-xl font-bold mb-1">{member.name}</h3>
                 <p className="text-primary font-medium">{member.role}</p>
               </Card>
