@@ -2,14 +2,18 @@ import { Card } from "@/components/ui/card";
 import { User } from "lucide-react";
 import teamPhoto from "@/assets/team-photo.jpg";
 import gabrielPhoto from "@/assets/gabriel-hillard.jpg";
+import stephaniePhoto from "@/assets/stephanie-cuel-oller.jpg";
+import marionPhoto from "@/assets/marion-ambroisine.jpg";
+import kevinPhoto from "@/assets/kevin-sanem.jpg";
+import elisePhoto from "@/assets/elise-marchesi.jpg";
 
 const Club = () => {
   const bureau = [
     { name: "Gabriel Hillard", role: "Président", photo: gabrielPhoto },
-    { name: "Stéphanie Cuel-Oller", role: "Trésorière", photo: null },
-    { name: "Marion Ambroisine", role: "Secrétaire", photo: null },
-    { name: "Kévin Sanem", role: "Responsable compétitions", photo: null },
-    { name: "Élise Marchesi", role: "Responsable communication", photo: null },
+    { name: "Stéphanie Cuel-Oller", role: "Trésorière", photo: stephaniePhoto },
+    { name: "Marion Ambroisine", role: "Secrétaire", photo: marionPhoto },
+    { name: "Kévin Sanem", role: "Responsable compétitions", photo: kevinPhoto },
+    { name: "Élise Marchesi", role: "Responsable communication", photo: elisePhoto },
   ];
 
   return (
