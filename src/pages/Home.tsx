@@ -5,29 +5,13 @@ import { Users, Trophy, Calendar, Heart } from "lucide-react";
 import heroImage from "@/assets/hero-badminton.jpg";
 
 const Home = () => {
+  const yearsOfExistence = new Date().getFullYear() - 2008;
+  
   const stats = [
     { icon: Users, value: "50+", label: "Licenciés" },
-    { icon: Trophy, value: "15", label: "Années d'existence" },
-    { icon: Calendar, value: "4", label: "Créneaux par semaine" },
+    { icon: Trophy, value: String(yearsOfExistence), label: "Années d'existence" },
+    { icon: Calendar, value: "2", label: "Créneaux par semaine" },
     { icon: Heart, value: "100%", label: "Convivialité" },
-  ];
-
-  const news = [
-    {
-      title: "Reprise des entraînements",
-      date: "Septembre 2025",
-      description: "Les entraînements reprennent dès la première semaine de septembre. Venez nous rejoindre !",
-    },
-    {
-      title: "Tournoi interne prévu",
-      date: "Octobre 2025",
-      description: "Un grand tournoi amical entre membres du club pour démarrer la saison en beauté.",
-    },
-    {
-      title: "Portes ouvertes",
-      date: "Novembre 2025",
-      description: "Venez découvrir le badminton gratuitement pendant nos journées portes ouvertes.",
-    },
   ];
 
   return (
@@ -96,32 +80,6 @@ const Home = () => {
                 </Card>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* News Section */}
-      <section className="py-16 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-end mb-12">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-2">Actualités</h2>
-              <p className="text-muted-foreground">Les dernières infos du club</p>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {news.map((item, index) => (
-              <Card
-                key={index}
-                className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="text-sm text-primary font-semibold mb-2">{item.date}</div>
-                <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                <p className="text-muted-foreground">{item.description}</p>
-              </Card>
-            ))}
           </div>
         </div>
       </section>

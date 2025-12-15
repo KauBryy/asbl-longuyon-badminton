@@ -55,17 +55,17 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin size={18} className="mt-0.5 flex-shrink-0 text-primary" />
-                <span>Gymnase Jean Bouin<br />Longuyon, France</span>
+                <span>Salle des Sports Léo Lagrange<br />Longuyon, France</span>
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Mail size={18} className="flex-shrink-0 text-primary" />
-                <a href="mailto:contact@badminton-longuyon.com" className="hover:text-primary transition-colors">
-                  contact@badminton-longuyon.com
+                <a href="mailto:bad.longuyon@gmail.com" className="hover:text-primary transition-colors">
+                  bad.longuyon@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Phone size={18} className="flex-shrink-0 text-primary" />
-                <span>06 XX XX XX XX</span>
+                <a href="tel:+33611616166" className="hover:text-primary transition-colors">+33 6 11 61 61 66</a>
               </li>
             </ul>
           </div>
@@ -75,7 +75,7 @@ const Footer = () => {
             <h3 className="font-semibold mb-4">Suivez-nous</h3>
             <div className="flex gap-3">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/share/1aGGikfTeq/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-primary/10 hover:bg-primary text-primary hover:text-white flex items-center justify-center transition-all"
@@ -83,7 +83,7 @@ const Footer = () => {
                 <Facebook size={20} />
               </a>
               <a
-                href="https://instagram.com/badminton_longuyon"
+                href="https://www.instagram.com/badminton_longuyon/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-primary/10 hover:bg-primary text-primary hover:text-white flex items-center justify-center transition-all"

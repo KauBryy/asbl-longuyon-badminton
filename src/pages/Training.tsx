@@ -5,16 +5,22 @@ import courtImage from "@/assets/court-aerial.jpg";
 const Training = () => {
   const schedules = [
     {
-      category: "Jeu Libre",
+      category: "Mercredi - Loisir",
       day: "Mercredi",
       time: "20h30 - 22h30",
-      level: "Tous niveaux (coach possible sur demande)",
+      level: "Jeu libre pour les licences \"loisir\"",
     },
     {
-      category: "Jeu Libre",
+      category: "Mercredi - Compétition",
+      day: "Mercredi",
+      time: "20h45 - 22h15",
+      level: "Entraînement encadré pour les licences \"compétition\"",
+    },
+    {
+      category: "Vendredi - Jeu Libre",
       day: "Vendredi",
       time: "20h30 - 22h30",
-      level: "Tous niveaux",
+      level: "Jeu libre pour tous",
     },
   ];
 
