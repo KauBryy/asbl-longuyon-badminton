@@ -17,10 +17,17 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message envoyé !", {
-      description: "Nous vous répondrons dans les plus brefs délais.",
+    
+    const subject = encodeURIComponent(`Contact depuis le site - ${formData.name}`);
+    const body = encodeURIComponent(
+      `Nom: ${formData.name}\nEmail: ${formData.email}\nTéléphone: ${formData.phone || "Non renseigné"}\n\nMessage:\n${formData.message}`
+    );
+    
+    window.location.href = `mailto:aubrypierre69@gmail.com?subject=${subject}&body=${body}`;
+    
+    toast.success("Redirection vers votre messagerie...", {
+      description: "Envoyez le message depuis votre application de messagerie.",
     });
-    setFormData({ name: "", email: "", phone: "", message: "" });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
