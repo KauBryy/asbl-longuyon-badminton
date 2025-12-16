@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, Instagram, Mail, MapPin, Phone, Rocket } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -39,11 +39,6 @@ const Footer = () => {
               <li>
                 <Link to="/entrainements" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                   Entraînements
-                </Link>
-              </li>
-              <li>
-                <Link to="/competitions" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  Compétitions
                 </Link>
               </li>
             </ul>
@@ -94,9 +89,21 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-border mt-8 pt-8 text-center">
+        <div className="border-t border-border mt-8 pt-8 text-center space-y-2">
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} AS Badminton Longuyon - Tous droits réservés
+          </p>
+          <p className="text-xs text-muted-foreground/70 flex items-center justify-center gap-1">
+            <Rocket size={12} />
+            Site conçu par{" "}
+            <a
+              href="https://www.linkedin.com/in/pierreaubryit"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
+              KauBry Apps
+            </a>
           </p>
         </div>
       </div>
