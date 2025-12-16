@@ -29,7 +29,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     const emailResponse = await resend.emails.send({
       from: "AS Badminton Longuyon <onboarding@resend.dev>",
-      to: ["aubrypierre69@gmail.com"],
+      to: ["bad.longuyon@gmail.com"],
       subject: `Nouveau message de contact - ${name}`,
       html: `
         <h2>Nouveau message depuis le site AS Badminton Longuyon</h2>
