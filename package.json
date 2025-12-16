@@ -2,7 +2,7 @@
   "name": "vite_react_shadcn_ts",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://KauBryy.github.io/asbl-longuyon-badminton",
+  "homepage": "https://badminton-longuyon.fr",
   "type": "module",
   "scripts": {
     "dev": "vite",
