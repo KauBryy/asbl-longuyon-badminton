@@ -8,7 +8,7 @@ const Home = () => {
   const yearsOfExistence = new Date().getFullYear() - 2008;
   
   const stats = [
-    { icon: Users, value: "30+", label: "Licenciés" },
+    { icon: Users, value: "29+", label: "Licenciés" },
     { icon: Trophy, value: String(yearsOfExistence), label: "Années d'existence" },
     { icon: Calendar, value: "2", label: "Créneaux par semaine" },
     { icon: Heart, value: "100%", label: "Convivialité" },
