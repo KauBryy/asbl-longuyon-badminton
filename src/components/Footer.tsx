@@ -128,9 +128,8 @@ const Footer = () => {
                     </div>
                     <div>
                       <div className="font-bold text-white group-hover:text-red-500 transition-colors">Alain Afflelou</div>
-                      <div className="text-xs text-zinc-400 group-hover:text-zinc-300">Opticien</div>
+                      <div className="text-xs text-zinc-400 group-hover:text-zinc-300">Lunetterie Mazel Verdun</div>
                       <div className="text-[10px] text-zinc-500 mt-1 space-y-0.5 leading-tight">
-                        <p>Lunetterie Mazel - Verdun</p>
                         <p>2 rue de Mazel 55100</p>
                         <p>03 29 86 06 51</p>
                       </div>
