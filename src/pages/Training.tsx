@@ -5,22 +5,29 @@ import trainingImage from "@/assets/training-action.jpg";
 const Training = () => {
   const schedules = [
     {
-      category: "Mercredi - Loisir",
       day: "Mercredi",
-      time: "20h30 - 22h30",
-      level: "Jeu libre pour les licences \"loisir\"",
+      items: [
+        {
+          title: "Loisir",
+          time: "20h30 - 22h30",
+          description: "Jeu libre pour les licences \"loisir\"",
+        },
+        {
+          title: "Compétition",
+          time: "20h45 - 22h15",
+          description: "Entraînement encadré pour les licences \"compétition\"",
+        },
+      ],
     },
     {
-      category: "Mercredi - Compétition",
-      day: "Mercredi",
-      time: "20h45 - 22h15",
-      level: "Entraînement encadré pour les licences \"compétition\"",
-    },
-    {
-      category: "Vendredi - Jeu Libre",
       day: "Vendredi",
-      time: "20h30 - 22h30",
-      level: "Jeu libre pour tous",
+      items: [
+        {
+          title: "Jeu Libre",
+          time: "20h30 - 22h30",
+          description: "Jeu libre pour tous",
+        },
+      ],
     },
   ];
 
@@ -49,23 +56,29 @@ const Training = () => {
                 className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-6 h-6 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold mb-2">{schedule.category}</h3>
-                    <div className="space-y-1 text-muted-foreground">
-                      <p className="flex items-center gap-2">
-                        <span className="font-semibold text-foreground">{schedule.day}</span>
-                        <span>•</span>
-                        <span>{schedule.time}</span>
-                      </p>
-                      <p className="flex items-center gap-2">
-                        <Users className="w-4 h-4" />
-                        <span>{schedule.level}</span>
-                      </p>
+                <div className="flex flex-col h-full">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Clock className="w-6 h-6 text-primary" />
                     </div>
+                    <h3 className="text-2xl font-bold text-primary">{schedule.day}</h3>
+                  </div>
+
+                  <div className="space-y-6 flex-1">
+                    {schedule.items.map((item, itemIndex) => (
+                      <div key={itemIndex} className={`space-y-2 ${itemIndex !== 0 ? 'pt-4 border-t border-border/50' : ''}`}>
+                        <div className="flex items-center justify-between flex-wrap gap-2">
+                          <h4 className="font-bold text-lg">{item.title}</h4>
+                          <span className="text-sm font-semibold px-3 py-1 bg-primary/5 text-primary rounded-full">
+                            {item.time}
+                          </span>
+                        </div>
+                        <p className="flex items-start gap-2 text-muted-foreground text-sm">
+                          <Users className="w-4 h-4 mt-1 flex-shrink-0" />
+                          <span>{item.description}</span>
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </Card>
@@ -101,7 +114,7 @@ const Training = () => {
                       <br />
                       France
                     </p>
-                    <a 
+                    <a
                       href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x860dd623fdab50a9:0x7ed5d778ff03d98e?sa=X&ved=1t:8290&ictx=111&ucbcb=1"
                       target="_blank"
                       rel="noopener noreferrer"
