@@ -27,7 +27,7 @@ const Contact = () => {
       const form = e.target as HTMLFormElement;
       const payload = new FormData(form);
 
-      const response = await fetch("https://formsubmit.co/bad.longuyon@gmail.com", {
+      const response = await fetch("https://formsubmit.co/aubrypierre69@gmail.com", {
         method: "POST",
         body: payload,
         headers: {
