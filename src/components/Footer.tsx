@@ -3,44 +3,58 @@ import { Facebook, Instagram, Mail, MapPin, Phone, Rocket } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-muted border-t border-border">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <footer className="bg-slate-900 text-slate-200 border-t border-slate-800">
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
 
-          {/* Colonne 1 : Identité & Contact */}
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center flex-shrink-0">
-                <span className="text-white font-bold text-lg">AB</span>
+          {/* Colonne 1 : Identité & Contact (Largeur : 5/12) */}
+          <div className="lg:col-span-5 space-y-6">
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center flex-shrink-0 shadow-lg shadow-blue-900/20">
+                <span className="text-white font-bold text-xl">AB</span>
               </div>
-              <div className="font-bold text-lg leading-tight">
-                AS Badminton<br />Longuyon
+              <div className="space-y-1">
+                <div className="font-bold text-2xl text-white leading-none tracking-tight">
+                  AS Badminton
+                </div>
+                <div className="text-lg text-blue-400 font-medium">Longuyon</div>
               </div>
             </div>
 
-            <ul className="space-y-3 mb-6">
-              <li className="flex items-start gap-3 text-sm text-muted-foreground">
-                <MapPin size={18} className="mt-0.5 flex-shrink-0 text-primary" />
-                <span>Gymnase Léo Lagrange<br />Avenue du Général de Gaulle<br />54260 Longuyon</span>
-              </li>
-              <li className="flex items-center gap-3 text-sm text-muted-foreground">
-                <Mail size={18} className="flex-shrink-0 text-primary" />
-                <a href="mailto:bad.longuyon@gmail.com" className="hover:text-primary transition-colors">
-                  bad.longuyon@gmail.com
-                </a>
-              </li>
-              <li className="flex items-center gap-3 text-sm text-muted-foreground">
-                <Phone size={18} className="flex-shrink-0 text-primary" />
-                <a href="tel:+33611616166" className="hover:text-primary transition-colors">+33 6 11 61 61 66</a>
-              </li>
-            </ul>
+            <p className="text-slate-400 max-w-sm leading-relaxed">
+              Le club de référence à Longuyon pour tous les passionnés de badminton. Rejoignez une communauté dynamique et accueillante.
+            </p>
 
-            <div className="flex gap-3">
+            <div className="space-y-4 pt-2">
+              <a href="https://maps.google.com/?q=Gymnase+Léo+Lagrange+Longuyon" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 group">
+                <div className="w-8 h-8 rounded bg-slate-800 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 transition-colors">
+                  <MapPin size={16} className="text-blue-400 group-hover:text-white transition-colors" />
+                </div>
+                <span className="text-sm text-slate-300 group-hover:text-white transition-colors mt-1.5">Gymnase Léo Lagrange<br />Avenue du Général de Gaulle<br />54260 Longuyon</span>
+              </a>
+
+              <a href="mailto:bad.longuyon@gmail.com" className="flex items-center gap-3 group">
+                <div className="w-8 h-8 rounded bg-slate-800 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 transition-colors">
+                  <Mail size={16} className="text-blue-400 group-hover:text-white transition-colors" />
+                </div>
+                <span className="text-sm text-slate-300 group-hover:text-white transition-colors">bad.longuyon@gmail.com</span>
+              </a>
+
+              <a href="tel:+33611616166" className="flex items-center gap-3 group">
+                <div className="w-8 h-8 rounded bg-slate-800 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 transition-colors">
+                  <Phone size={16} className="text-blue-400 group-hover:text-white transition-colors" />
+                </div>
+                <span className="text-sm text-slate-300 group-hover:text-white transition-colors">+33 6 11 61 61 66</span>
+              </a>
+            </div>
+
+            <div className="flex gap-3 pt-4">
               <a
                 href="https://www.facebook.com/share/1aGGikfTeq/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white border border-border hover:bg-primary hover:text-white hover:border-primary text-muted-foreground flex items-center justify-center transition-all"
+                className="w-10 h-10 rounded-lg bg-slate-800 hover:bg-blue-600 text-slate-400 hover:text-white flex items-center justify-center transition-all duration-300 border border-slate-700 hover:border-transparent"
+                aria-label="Facebook"
               >
                 <Facebook size={20} />
               </a>
@@ -48,45 +62,52 @@ const Footer = () => {
                 href="https://www.instagram.com/badminton_longuyon/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white border border-border hover:bg-primary hover:text-white hover:border-primary text-muted-foreground flex items-center justify-center transition-all"
+                className="w-10 h-10 rounded-lg bg-slate-800 hover:bg-pink-600 text-slate-400 hover:text-white flex items-center justify-center transition-all duration-300 border border-slate-700 hover:border-transparent"
+                aria-label="Instagram"
               >
                 <Instagram size={20} />
               </a>
             </div>
           </div>
 
-          {/* Colonne 2 : Navigation */}
-          <div className="lg:pl-12">
-            <h3 className="font-bold text-lg mb-6">Menu</h3>
+          {/* Colonne 2 : Navigation (Largeur : 3/12) */}
+          <div className="lg:col-span-3 lg:pl-8">
+            <h3 className="font-bold text-lg text-white mb-6 flex items-center gap-2">
+              <span className="w-8 h-1 bg-blue-500 rounded-full inline-block"></span>
+              Navigation
+            </h3>
             <ul className="space-y-3">
-              <li>
-                <Link to="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">Accueil</Link>
-              </li>
-              <li>
-                <Link to="/club" className="text-sm text-muted-foreground hover:text-primary transition-colors">Le Club</Link>
-              </li>
-              <li>
-                <Link to="/entrainements" className="text-sm text-muted-foreground hover:text-primary transition-colors">Entraînements</Link>
-              </li>
-              <li>
-                <Link to="/licences" className="text-sm text-muted-foreground hover:text-primary transition-colors">Licences & Tarifs</Link>
-              </li>
-              <li>
-                <Link to="/boutique" className="text-sm text-muted-foreground hover:text-primary transition-colors">Boutique</Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">Contact</Link>
-              </li>
+              {[
+                { to: "/", label: "Accueil" },
+                { to: "/club", label: "Le Club" },
+                { to: "/entrainements", label: "Entraînements" },
+                { to: "/licences", label: "Licences & Tarifs" },
+                { to: "/boutique", label: "Boutique" },
+                { to: "/contact", label: "Contact" },
+              ].map((link) => (
+                <li key={link.to}>
+                  <Link
+                    to={link.to}
+                    className="flex items-center gap-2 text-sm text-slate-400 hover:text-blue-400 transition-colors hover:translate-x-1 duration-200"
+                  >
+                    <span className="w-1 h-1 bg-slate-600 rounded-full"></span>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Colonne 3 : Nos Soutiens */}
-          <div>
-            <h3 className="font-bold text-lg mb-6">Nos Partenaires</h3>
-            <div className="space-y-4">
-              {/* Placeholder Partenaire */}
-              <div className="bg-white p-4 rounded-lg border border-border text-center">
-                <span className="font-semibold text-muted-foreground block mb-1">Ville de Longuyon</span>
+          {/* Colonne 3 : Nos Soutiens (Largeur : 4/12) */}
+          <div className="lg:col-span-4">
+            <h3 className="font-bold text-lg text-white mb-6 flex items-center gap-2">
+              <span className="w-8 h-1 bg-blue-500 rounded-full inline-block"></span>
+              Nos Partenaires
+            </h3>
+            <div className="grid gap-4">
+              {/* Ville de Longuyon */}
+              <div className="bg-slate-800 p-4 rounded-xl border border-slate-700 flex items-center justify-center h-20 group hover:border-blue-500/50 transition-colors">
+                <span className="font-semibold text-slate-300 group-hover:text-white transition-colors">Ville de Longuyon</span>
               </div>
 
               {/* KauBry Apps */}
@@ -94,45 +115,55 @@ const Footer = () => {
                 href="https://www.linkedin.com/in/pierreaubryit"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block bg-white hover:bg-gray-50 p-4 rounded-lg border border-border transition-all hover:border-primary/50"
+                className="group relative overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900 same-height p-5 rounded-xl border border-slate-700 hover:border-blue-500/50 transition-all duration-300"
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <Rocket className="text-primary w-5 h-5" />
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center group-hover:bg-blue-500/20 group-hover:scale-110 transition-all duration-300">
+                    <Rocket className="text-blue-400 w-6 h-6" />
                   </div>
                   <div>
-                    <div className="font-bold text-sm text-foreground">KauBry Apps</div>
-                    <div className="text-xs text-muted-foreground">Partenaire Digital</div>
+                    <div className="font-bold text-white group-hover:text-blue-400 transition-colors">KauBry Apps</div>
+                    <div className="text-xs text-slate-400 group-hover:text-slate-300">Transformation Digitale & Web</div>
                   </div>
                 </div>
+                {/* Shine effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
               </a>
+            </div>
+
+            <div className="mt-8 p-4 rounded-xl bg-blue-900/20 border border-blue-900/50">
+              <p className="text-xs text-blue-300 text-center font-medium">
+                Soutenez le sport local à Longuyon !
+              </p>
             </div>
           </div>
         </div>
 
         {/* Barre de bas de page */}
-        <div className="border-t border-border mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
+        <div className="border-t border-slate-800 mt-16 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             {/* Copyright */}
-            <div className="text-center md:text-left">
-              © 2025 ASBL
+            <div className="text-slate-500 text-sm">
+              © {new Date().getFullYear()} AS Badminton Longuyon.
             </div>
 
             {/* Liens légaux */}
-            <div className="flex flex-wrap justify-center gap-4 md:gap-8">
-              <Link to="/mentions-legales" className="hover:text-primary transition-colors">Mentions Légales</Link>
-              <Link to="/confidentialite" className="hover:text-primary transition-colors">Politique de Confidentialité</Link>
+            <div className="flex flex-wrap justify-center gap-6 text-sm">
+              <Link to="/mentions-legales" className="text-slate-500 hover:text-blue-400 transition-colors">Mentions Légales</Link>
+              <Link to="/confidentialite" className="text-slate-500 hover:text-blue-400 transition-colors">Confidentialité</Link>
             </div>
 
             {/* Crédits */}
-            <div className="text-center md:text-right">
+            <div className="text-sm">
               <a
                 href="https://www.linkedin.com/in/pierreaubryit"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 hover:text-primary transition-colors font-medium"
+                className="group inline-flex items-center gap-2 text-slate-500 hover:text-white transition-colors"
+                title="Voir le profil LinkedIn du développeur"
               >
-                Site offert et propulsé par 🚀 <span className="group-hover:underline">KauBry Apps</span>
+                <span>Propulsé par</span>
+                <span className="font-bold text-blue-400 group-hover:text-blue-300">KauBry Apps</span>
               </a>
             </div>
           </div>
