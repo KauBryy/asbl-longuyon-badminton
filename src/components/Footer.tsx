@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Facebook, Instagram, Mail, MapPin, Phone, Rocket } from "lucide-react";
 import logoVille from "@/assets/logo-ville-longuyon.png";
 import logoKaubry from "@/assets/logo-kaubry-apps.png";
+import logoAfflelou from "@/assets/logo-alain-afflelou.png";
 
 const Footer = () => {
   return (
@@ -110,25 +111,24 @@ const Footer = () => {
                 Nos Partenaires
               </h3>
               <div className="grid gap-4">
-                {/* Ville de Longuyon */}
-                {/* Ville de Longuyon */}
+                {/* Alain Afflelou */}
                 <a
-                  href="https://www.longuyon.fr/"
+                  href="https://www.afflelou.com/opticien/verdun/afflelou-2-rue-mazel-55100"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative overflow-hidden bg-gradient-to-br from-zinc-900 to-zinc-950 p-5 rounded-xl border border-zinc-800 hover:border-red-500/50 transition-all duration-300"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-white/10 group-hover:scale-110 transition-all duration-300 p-2">
+                    <div className="w-12 h-12 rounded-lg bg-white flex items-center justify-center group-hover:scale-110 transition-all duration-300 p-1">
                       <img
-                        src={logoVille}
-                        alt="Ville de Longuyon"
+                        src={logoAfflelou}
+                        alt="Alain Afflelou"
                         className="w-full h-full object-contain"
                       />
                     </div>
                     <div>
-                      <div className="font-bold text-white group-hover:text-red-500 transition-colors">Ville de Longuyon</div>
-                      <div className="text-xs text-zinc-400 group-hover:text-zinc-300">Site Officiel</div>
+                      <div className="font-bold text-white group-hover:text-red-500 transition-colors">Alain Afflelou</div>
+                      <div className="text-xs text-zinc-400 group-hover:text-zinc-300">Opticien & Acousticien</div>
                     </div>
                   </div>
                   {/* Shine effect */}
@@ -153,6 +153,30 @@ const Footer = () => {
                     <div>
                       <div className="font-bold text-white group-hover:text-red-500 transition-colors">KauBry Apps</div>
                       <div className="text-xs text-zinc-400 group-hover:text-zinc-300">Transformation Digitale & Web</div>
+                    </div>
+                  </div>
+                  {/* Shine effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                </a>
+
+                {/* Ville de Longuyon */}
+                <a
+                  href="https://www.longuyon.fr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative overflow-hidden bg-gradient-to-br from-zinc-900 to-zinc-950 p-5 rounded-xl border border-zinc-800 hover:border-red-500/50 transition-all duration-300"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-white/10 group-hover:scale-110 transition-all duration-300 p-2">
+                      <img
+                        src={logoVille}
+                        alt="Ville de Longuyon"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <div>
+                      <div className="font-bold text-white group-hover:text-red-500 transition-colors">Ville de Longuyon</div>
+                      <div className="text-xs text-zinc-400 group-hover:text-zinc-300">Site Officiel</div>
                     </div>
                   </div>
                   {/* Shine effect */}
