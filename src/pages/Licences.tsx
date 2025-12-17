@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check, ExternalLink, Download } from "lucide-react";
+import passSportLogo from "@/assets/pass-sport-logo.png";
 
 const Licences = () => {
   return (
@@ -115,58 +116,67 @@ const Licences = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <Card className="p-8">
-              <div className="flex items-start gap-4 mb-6">
-                <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+              {/* En-tête avec logo et texte */}
+              <div className="flex flex-col md:flex-row items-center md:items-start gap-4 mb-6">
+                <div className="w-48 h-auto flex items-center justify-center flex-shrink-0 bg-white rounded-lg p-2">
                   <img
-                    src="https://www.pass.sports.gouv.fr/assets/images/logo-pass-sport.png"
+                    src={passSportLogo}
                     alt="Pass Sport"
-                    className="w-12 h-12 object-contain"
+                    className="w-full h-auto object-contain"
                   />
                 </div>
                 <div>
                   <h2 className="text-3xl font-bold mb-2">Réductions et aides</h2>
                   <p className="text-lg text-muted-foreground">
-                    Nos tarifs sont éligibles au Pass' Sport afin de faciliter l'accès aux jeunes à la pratique du badminton
+                    Nos tarifs sont éligibles au Pass' Sport (50€ de déduction) afin de faciliter l'accès aux jeunes à la pratique du badminton.
                   </p>
                 </div>
               </div>
 
-              <div className="space-y-4">
+              {/* Vidéo et Liste */}
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Colonne gauche : Vidéo + Bouton */}
+                <div className="space-y-6">
+                  <div className="aspect-video w-full rounded-lg overflow-hidden border shadow-sm">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      src="https://www.youtube.com/embed/iXjgePcJFQI"
+                      title="Présentation Pass'Sport"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+
+                  <Button asChild className="w-full bg-[#2a3088] hover:bg-[#2a3088]/90 text-white" size="lg">
+                    <a href="https://www.pass.sports.gouv.fr/v2/accueil" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                      Tester mon éligibilité en 1 minute
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </Button>
+                </div>
+
+                {/* Colonne droite : Liste d'éligibilité */}
                 <div>
-                  <h4 className="font-semibold mb-2">Il est accessible aux personnes :</h4>
-                  <ul className="space-y-2 text-muted-foreground ml-4">
+                  <h4 className="font-semibold mb-4 text-lg">Le Pass'Sport est une aide de 50€ pour :</h4>
+                  <ul className="space-y-3 text-muted-foreground">
                     <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Âgées de 14 à 17 ans bénéficiaires de l'Allocation de Rentrée Scolaire (ARS)</span>
+                      <span className="text-primary mt-1 font-bold">•</span>
+                      <span>Les jeunes de 6 à 17 ans révolus bénéficiant de l'allocation de rentrée scolaire (ARS)</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Aux jeunes en situation de handicap :</span>
+                      <span className="text-primary mt-1 font-bold">•</span>
+                      <span>Les jeunes de 6 à 20 ans bénéficiant de l'allocation d'éducation de l'enfant handicapé (AEEH)</span>
                     </li>
-                    <ul className="ml-6 space-y-1">
-                      <li className="flex items-start gap-2">
-                        <span className="text-primary mt-1">◦</span>
-                        <span>De 6 à 19 ans bénéficiaires de l'Allocation d'Éducation de l'Enfant Handicapé (AEEH)</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-primary mt-1">◦</span>
-                        <span>De 16 à 30 ans bénéficiaires de l'Allocation aux Adultes Handicapés (AAH)</span>
-                      </li>
-                    </ul>
                     <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1">•</span>
-                      <span>Aux étudiants boursiers de moins de 28 ans bénéficiaires d'une bourse attribuée avant le 15 octobre 2025 :</span>
+                      <span className="text-primary mt-1 font-bold">•</span>
+                      <span>Les jeunes de 16 à 30 ans bénéficiant de l'allocation aux adultes handicapés (AAH)</span>
                     </li>
-                    <ul className="ml-6 space-y-1">
-                      <li className="flex items-start gap-2">
-                        <span className="text-primary mt-1">◦</span>
-                        <span>Bourse du CROUS (y compris l'aide annuelle)</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-primary mt-1">◦</span>
-                        <span>Bourse régionale formations sanitaires et sociales</span>
-                      </li>
-                    </ul>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1 font-bold">•</span>
+                      <span>Les étudiants boursiers et les bénéficiaires d'une aide annuelle du Crous de moins de 28 ans</span>
+                    </li>
                   </ul>
                 </div>
               </div>
