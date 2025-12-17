@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Facebook, Instagram, Mail, MapPin, Phone, Rocket } from "lucide-react";
 import logoVille from "@/assets/logo-ville-longuyon.png";
 import logoKaubry from "@/assets/logo-kaubry-apps.png";
-import logoAfflelou from "@/assets/logo-alain-afflelou.png";
+import photoAfflelou from "@/assets/photo-afflelou-verdun.jpg";
 
 const Footer = () => {
   return (
@@ -119,16 +119,16 @@ const Footer = () => {
                   className="group relative overflow-hidden bg-gradient-to-br from-zinc-900 to-zinc-950 p-5 rounded-xl border border-zinc-800 hover:border-red-500/50 transition-all duration-300"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-white flex items-center justify-center group-hover:scale-110 transition-all duration-300 p-1">
+                    <div className="w-12 h-12 rounded-lg bg-white flex items-center justify-center group-hover:scale-110 transition-all duration-300 overflow-hidden">
                       <img
-                        src={logoAfflelou}
+                        src={photoAfflelou}
                         alt="Alain Afflelou"
-                        className="w-full h-full object-contain"
+                        className="w-full h-full object-cover"
                       />
                     </div>
                     <div>
                       <div className="font-bold text-white group-hover:text-red-500 transition-colors">Alain Afflelou</div>
-                      <div className="text-xs text-zinc-400 group-hover:text-zinc-300">Opticien & Acousticien</div>
+                      <div className="text-xs text-zinc-400 group-hover:text-zinc-300">Opticien</div>
                       <div className="text-[10px] text-zinc-500 mt-1 space-y-0.5 leading-tight">
                         <p>Lunetterie Mazel - Verdun</p>
                         <p>2 rue de Mazel 55100</p>
