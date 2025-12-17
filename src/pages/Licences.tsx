@@ -109,7 +109,7 @@ const Licences = () => {
       <section className="py-16 bg-primary/5">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <Card className="p-8">
+            <Card className="p-4 md:p-8">
               {/* En-tête avec logo et texte */}
               <div className="flex flex-col md:flex-row items-center md:items-start gap-4 mb-6">
                 <div className="w-48 h-auto flex items-center justify-center flex-shrink-0 bg-white rounded-lg p-2">
@@ -143,10 +143,10 @@ const Licences = () => {
                     ></iframe>
                   </div>
 
-                  <Button asChild className="w-full bg-[#2a3088] hover:bg-[#2a3088]/90 text-white" size="lg">
+                  <Button asChild className="w-full bg-[#2a3088] hover:bg-[#2a3088]/90 text-white h-auto py-4 whitespace-normal text-center" size="lg">
                     <a href="https://www.pass.sports.gouv.fr/v2/accueil" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                       Tester mon éligibilité en 1 minute
-                      <ExternalLink className="w-4 h-4" />
+                      <ExternalLink className="w-4 h-4 flex-shrink-0" />
                     </a>
                   </Button>
                 </div>
@@ -163,7 +163,7 @@ const Licences = () => {
                       <span className="text-primary mt-1 font-bold">•</span>
                       <span>Les jeunes en situation de handicap :</span>
                     </li>
-                    <ul className="ml-6 space-y-2 border-l-2 pl-4">
+                    <ul className="ml-2 md:ml-6 space-y-2 border-l-2 pl-3 md:pl-4">
                       <li className="flex items-start gap-2">
                         <span className="text-primary mt-1">•</span>
                         <span>De 6 à 19 ans bénéficiaires de l'Allocation d'Éducation de l'Enfant Handicapé (AEEH)</span>
@@ -177,7 +177,7 @@ const Licences = () => {
                       <span className="text-primary mt-1 font-bold">•</span>
                       <span>Les étudiants boursiers de moins de 28 ans bénéficiaires d'une bourse attribuée avant le 15 octobre 2025 :</span>
                     </li>
-                    <ul className="ml-6 space-y-2 border-l-2 pl-4">
+                    <ul className="ml-2 md:ml-6 space-y-2 border-l-2 pl-3 md:pl-4">
                       <li className="flex items-start gap-2">
                         <span className="text-primary mt-1">•</span>
                         <span>Bourse du CROUS (y compris l'aide annuelle)</span>
