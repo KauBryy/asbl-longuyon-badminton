@@ -21,43 +21,92 @@ const Licences = () => {
             <p className="text-xl text-muted-foreground">Paiement par virement bancaire (infos données sur place)</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
-            <Card className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in border-2">
-              <div className="text-center">
-                <h3 className="text-2xl font-bold mb-2">Adulte</h3>
-                <div className="text-5xl font-bold text-primary mb-6">90€</div>
-                <p className="text-muted-foreground">Par an</p>
-              </div>
-            </Card>
+          {/* Tarifs et Détails par catégorie */}
+          <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
 
-            <Card className="p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in border-2" style={{ animationDelay: '0.1s' }}>
-              <div className="text-center">
-                <h3 className="text-2xl font-bold mb-2">Jeune</h3>
-                <div className="text-5xl font-bold text-primary mb-6">80€</div>
-                <p className="text-muted-foreground">Par an</p>
-              </div>
-            </Card>
-          </div>
-
-          {/* Ce qui est inclus */}
-          <Card className="p-8 max-w-4xl mx-auto bg-muted/50">
-            <h3 className="text-2xl font-bold mb-6 text-center">Ta licence comprend :</h3>
-            <div className="grid md:grid-cols-2 gap-4">
-              {[
-                "L'accès aux séances 'jeu libre' les mercredis et vendredis soirs",
-                "La fourniture des volants hybrides pour ces créneaux",
-                "La licence / assurance à la Fédération Française de Badminton (FFBad)",
-                "L'inscription (si volontaire) aux championnats régionaux (tournois) et départementaux (interclubs)",
-                "L'accès à une salle comportant 4 terrains de doubles et 2 terrains de simples",
-                "L'abonnement d'un an à Badminton Magazine en version numérique (disponible sur le compte MyFFBAD des licencié.e.s)",
-              ].map((item, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <Check className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                  <span>{item}</span>
+            {/* Colonne Loisir */}
+            <Card className="p-8 hover:shadow-xl transition-all duration-300 border-2 flex flex-col h-full bg-white/50">
+              <div className="text-center mb-8">
+                <h3 className="text-3xl font-bold mb-6 text-primary">Loisir</h3>
+                <div className="space-y-4">
+                  <div className="p-4 bg-background rounded-lg border">
+                    <p className="text-lg font-semibold">Adulte Loisir</p>
+                    <div className="text-4xl font-bold text-primary">90€</div>
+                    <p className="text-sm text-muted-foreground">Par an</p>
+                  </div>
+                  <div className="p-4 bg-background rounded-lg border">
+                    <p className="text-lg font-semibold">Jeune Loisir</p>
+                    <div className="text-4xl font-bold text-primary">80€</div>
+                    <p className="text-sm text-muted-foreground">Par an</p>
+                  </div>
                 </div>
-              ))}
-            </div>
-          </Card>
+              </div>
+
+              <div className="flex-grow">
+                <h4 className="text-xl font-bold mb-4">Ta licence "loisir" comprend :</h4>
+                <div className="space-y-3">
+                  {[
+                    "L'accès aux séances 'jeu libre' les mercredis et les vendredis soirs",
+                    "La fourniture des volants hybrides pour ces créneaux",
+                    "La licence / assurance à la Fédération Française de Badminton (FFBad)",
+                    "L'inscription (si volontaire) aux championnats régionaux (tournois) et départementaux (interclubs)",
+                    "L'accès à une salle comportant 4 terrains de doubles et 2 terrains de simples",
+                    "L'abonnement d'un an à Badminton Magazine en version numérique (disponible sur le compte MyFFBAD des licencié.e.s)",
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                      <span className="text-sm">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-8 p-4 bg-amber-50 border border-amber-200 rounded-lg text-amber-800 text-sm font-medium flex items-start gap-3">
+                <span className="text-lg">⚠️</span>
+                <p>Attention : la licence "loisir" ne permet donc pas d'assister à l'entraînement encadré du mercredi soir !</p>
+              </div>
+            </Card>
+
+            {/* Colonne Compétition */}
+            <Card className="p-8 hover:shadow-xl transition-all duration-300 border-2 border-primary/20 flex flex-col h-full bg-primary/5">
+              <div className="text-center mb-8">
+                <h3 className="text-3xl font-bold mb-6 text-primary">Compétition</h3>
+                <div className="space-y-4">
+                  <div className="p-4 bg-background rounded-lg border border-primary/20 shadow-sm">
+                    <p className="text-lg font-semibold">Jeune Compétition</p>
+                    <div className="text-4xl font-bold text-primary">140€</div>
+                    <p className="text-sm text-muted-foreground">Par an</p>
+                  </div>
+                  <div className="p-4 bg-background rounded-lg border border-primary/20 shadow-sm">
+                    <p className="text-lg font-semibold">Adulte Compétition</p>
+                    <div className="text-4xl font-bold text-primary">140€</div>
+                    <p className="text-sm text-muted-foreground">Par an</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex-grow">
+                <h4 className="text-xl font-bold mb-4">Ta licence "compétition" comprend :</h4>
+                <div className="space-y-3">
+                  {[
+                    "L'accès à l'entraînement dispensé par une entraîneuse qualifiée tous les mercredis de 20h45 à 22h15",
+                    "L'accès aux séances 'jeu libre' les mercredis et les vendredis soirs",
+                    "La fourniture des volants hybrides pour ces créneaux",
+                    "La licence / assurance à la Fédération Française de Badminton (FFBad)",
+                    "L'inscription (si volontaire) aux championnats régionaux (tournois) et départementaux (interclubs)",
+                    "L'accès à une salle comportant 4 terrains de doubles et 2 terrains de simples",
+                    "L'abonnement d'un an à Badminton Magazine en version numérique (disponible sur le compte MyFFBAD des licencié.e.s)",
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                      <span className="text-sm">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Card>
+
+          </div>
         </div>
       </section>
 
@@ -68,9 +117,9 @@ const Licences = () => {
             <Card className="p-8">
               <div className="flex items-start gap-4 mb-6">
                 <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <img 
-                    src="https://www.pass.sports.gouv.fr/assets/images/logo-pass-sport.png" 
-                    alt="Pass Sport" 
+                  <img
+                    src="https://www.pass.sports.gouv.fr/assets/images/logo-pass-sport.png"
+                    alt="Pass Sport"
                     className="w-12 h-12 object-contain"
                   />
                 </div>
