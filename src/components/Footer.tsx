@@ -110,17 +110,28 @@ const Footer = () => {
               </h3>
               <div className="grid gap-4">
                 {/* Ville de Longuyon */}
+                {/* Ville de Longuyon */}
                 <a
                   href="https://www.longuyon.fr/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-zinc-900 p-4 rounded-xl border border-zinc-800 flex items-center justify-center h-20 group hover:border-red-500/50 transition-colors overflow-hidden"
+                  className="group relative overflow-hidden bg-gradient-to-br from-zinc-900 to-zinc-950 p-5 rounded-xl border border-zinc-800 hover:border-red-500/50 transition-all duration-300"
                 >
-                  <img
-                    src={logoVille}
-                    alt="Ville de Longuyon"
-                    className="h-full w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity"
-                  />
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-white/10 group-hover:scale-110 transition-all duration-300 p-2">
+                      <img
+                        src={logoVille}
+                        alt="Ville de Longuyon"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <div>
+                      <div className="font-bold text-white group-hover:text-red-500 transition-colors">Ville de Longuyon</div>
+                      <div className="text-xs text-zinc-400 group-hover:text-zinc-300">Site Officiel</div>
+                    </div>
+                  </div>
+                  {/* Shine effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 </a>
 
                 {/* KauBry Apps */}
