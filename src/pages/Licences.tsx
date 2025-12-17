@@ -91,7 +91,7 @@ const Licences = () => {
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                    <span className="text-sm font-semibold">Tout ce que la licence "loisir" comprend</span>
+                    <span className="text-sm font-semibold">Tous les avantages de la licence Loisir</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <Check className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
