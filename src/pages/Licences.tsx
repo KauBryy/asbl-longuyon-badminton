@@ -122,7 +122,7 @@ const Licences = () => {
                 <div>
                   <h2 className="text-3xl font-bold mb-2">Réductions et aides</h2>
                   <p className="text-lg text-muted-foreground">
-                    Nos tarifs sont éligibles au Pass' Sport (50€ de déduction) afin de faciliter l'accès aux jeunes à la pratique du badminton.
+                    Nos tarifs sont éligibles au Pass' Sport (70€ de déduction) afin de faciliter l'accès aux jeunes à la pratique du badminton.
                   </p>
                 </div>
               </div>
@@ -153,24 +153,40 @@ const Licences = () => {
 
                 {/* Colonne droite : Liste d'éligibilité */}
                 <div>
-                  <h4 className="font-semibold mb-4 text-lg">Le Pass'Sport est une aide de 50€ pour :</h4>
+                  <h4 className="font-semibold mb-4 text-lg">Le Pass'Sport est une aide de 70€ pour :</h4>
                   <ul className="space-y-3 text-muted-foreground">
                     <li className="flex items-start gap-2">
                       <span className="text-primary mt-1 font-bold">•</span>
-                      <span>Les jeunes de 6 à 17 ans révolus bénéficiant de l'allocation de rentrée scolaire (ARS)</span>
+                      <span>Les jeunes de 14 à 17 ans bénéficiaires de l'Allocation de Rentrée Scolaire (ARS)</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-primary mt-1 font-bold">•</span>
-                      <span>Les jeunes de 6 à 20 ans bénéficiant de l'allocation d'éducation de l'enfant handicapé (AEEH)</span>
+                      <span>Les jeunes en situation de handicap :</span>
                     </li>
+                    <ul className="ml-6 space-y-2 border-l-2 pl-4">
+                      <li className="flex items-start gap-2">
+                        <span className="text-primary mt-1">•</span>
+                        <span>De 6 à 19 ans bénéficiaires de l'Allocation d'Éducation de l'Enfant Handicapé (AEEH)</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-primary mt-1">•</span>
+                        <span>De 16 à 30 ans bénéficiaires de l'Allocation aux Adultes Handicapés (AAH)</span>
+                      </li>
+                    </ul>
                     <li className="flex items-start gap-2">
                       <span className="text-primary mt-1 font-bold">•</span>
-                      <span>Les jeunes de 16 à 30 ans bénéficiant de l'allocation aux adultes handicapés (AAH)</span>
+                      <span>Les étudiants boursiers de moins de 28 ans bénéficiaires d'une bourse attribuée avant le 15 octobre 2025 :</span>
                     </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-primary mt-1 font-bold">•</span>
-                      <span>Les étudiants boursiers et les bénéficiaires d'une aide annuelle du Crous de moins de 28 ans</span>
-                    </li>
+                    <ul className="ml-6 space-y-2 border-l-2 pl-4">
+                      <li className="flex items-start gap-2">
+                        <span className="text-primary mt-1">•</span>
+                        <span>Bourse du CROUS (y compris l'aide annuelle)</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <span className="text-primary mt-1">•</span>
+                        <span>Bourse régionale formations sanitaires et sociales</span>
+                      </li>
+                    </ul>
                   </ul>
                 </div>
               </div>
