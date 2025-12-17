@@ -6,7 +6,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, MapPin, Phone, Facebook, Instagram, Loader2 } from "lucide-react";
 import { toast } from "sonner";
-import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -16,24 +15,36 @@ const Contact = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setIsError(false);
 
     try {
-      const { data, error } = await supabase.functions.invoke("send-contact-email", {
-        body: formData,
+      const form = e.target as HTMLFormElement;
+      const payload = new FormData(form);
+
+      const response = await fetch("https://formsubmit.co/bad.longuyon@gmail.com", {
+        method: "POST",
+        body: payload,
+        headers: {
+          'Accept': 'application/json'
+        }
       });
 
-      if (error) throw error;
+      if (!response.ok) throw new Error("Erreur network");
 
+      setIsSuccess(true);
       toast.success("Message envoyé !", {
         description: "Nous vous répondrons dans les plus brefs délais.",
       });
       setFormData({ name: "", email: "", phone: "", message: "" });
     } catch (error: any) {
       console.error("Error sending message:", error);
+      setIsError(true);
       toast.error("Erreur lors de l'envoi", {
         description: "Veuillez réessayer ou nous contacter par téléphone.",
       });
@@ -177,77 +188,101 @@ const Contact = () => {
             {/* Formulaire */}
             <Card className="p-8 animate-fade-in">
               <h3 className="text-2xl font-bold mb-6">Envoyez-nous un message</h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <Label htmlFor="name">Nom complet *</Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    type="text"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="mt-2"
-                    placeholder="Votre nom"
-                  />
+              {isSuccess ? (
+                <div className="bg-green-50 text-green-800 p-6 rounded-lg text-center border border-green-200 animate-fade-in">
+                  <div className="mb-4 flex justify-center">
+                    <div className="h-12 w-12 bg-green-100 rounded-full flex items-center justify-center">
+                      <svg className="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                  </div>
+                  <p className="text-lg font-semibold">Merci ! Votre message a bien été envoyé au club.</p>
                 </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Champs cachés pour Formsubmit.co */}
+                  <input type="hidden" name="_cc" value="aubrypierre69@gmail.com" />
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_template" value="table" />
 
-                <div>
-                  <Label htmlFor="email">Email *</Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="mt-2"
-                    placeholder="votre.email@exemple.com"
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="phone">Téléphone</Label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="mt-2"
-                    placeholder="06 XX XX XX XX"
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="message">Message *</Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    className="mt-2 min-h-[150px]"
-                    placeholder="Votre message..."
-                  />
-                </div>
-
-                <Button 
-                  type="submit" 
-                  size="lg" 
-                  className="w-full bg-accent hover:bg-accent/90"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                      Envoi en cours...
-                    </>
-                  ) : (
-                    "Envoyer le message"
+                  {isError && (
+                    <div className="bg-red-50 text-red-800 p-4 rounded-md text-sm">
+                      Une erreur est survenue lors de l'envoi. Veuillez réessayer.
+                    </div>
                   )}
-                </Button>
-              </form>
+
+                  <div>
+                    <Label htmlFor="name">Nom complet *</Label>
+                    <Input
+                      id="name"
+                      name="name"
+                      type="text"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="mt-2"
+                      placeholder="Votre nom"
+                    />
+                  </div>
+
+                  <div>
+                    <Label htmlFor="email">Email *</Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="mt-2"
+                      placeholder="votre.email@exemple.com"
+                    />
+                  </div>
+
+                  <div>
+                    <Label htmlFor="phone">Téléphone</Label>
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="mt-2"
+                      placeholder="06 XX XX XX XX"
+                    />
+                  </div>
+
+                  <div>
+                    <Label htmlFor="message">Message *</Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      className="mt-2 min-h-[150px]"
+                      placeholder="Votre message..."
+                    />
+                  </div>
+
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full bg-accent hover:bg-accent/90"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Envoi en cours...
+                      </>
+                    ) : (
+                      "Envoyer le message"
+                    )}
+                  </Button>
+                </form>
+              )}
             </Card>
           </div>
         </div>
