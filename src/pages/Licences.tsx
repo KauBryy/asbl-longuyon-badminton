@@ -89,20 +89,14 @@ const Licences = () => {
               <div className="flex-grow">
                 <h4 className="text-xl font-bold mb-4">Ta licence "compétition" comprend :</h4>
                 <div className="space-y-3">
-                  {[
-                    "L'accès à l'entraînement dispensé par une entraîneuse qualifiée tous les mercredis de 20h45 à 22h15",
-                    "L'accès aux séances 'jeu libre' les mercredis et les vendredis soirs",
-                    "La fourniture des volants hybrides pour ces créneaux",
-                    "La licence / assurance à la Fédération Française de Badminton (FFBad)",
-                    "L'inscription (si volontaire) aux championnats régionaux (tournois) et départementaux (interclubs)",
-                    "L'accès à une salle comportant 4 terrains de doubles et 2 terrains de simples",
-                    "L'abonnement d'un an à Badminton Magazine en version numérique (disponible sur le compte MyFFBAD des licencié.e.s)",
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                      <span className="text-sm">{item}</span>
-                    </div>
-                  ))}
+                  <div className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                    <span className="text-sm font-semibold">Tout ce que la licence "loisir" comprend</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                    <span className="text-sm">PLUS : L'accès à l'entraînement dispensé par une entraîneuse qualifiée tous les mercredis de 20h45 à 22h15</span>
+                  </div>
                 </div>
               </div>
             </Card>
