@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Mail, MapPin, Phone, Rocket } from "lucide-react";
 import logoVille from "@/assets/logo-ville-longuyon.png";
+import logoKaubry from "@/assets/logo-kaubry-apps.png";
 
 const Footer = () => {
   return (
@@ -139,11 +140,15 @@ const Footer = () => {
                   href="https://www.linkedin.com/in/pierreaubryit"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative overflow-hidden bg-gradient-to-br from-zinc-900 to-zinc-950 same-height p-5 rounded-xl border border-zinc-800 hover:border-red-500/50 transition-all duration-300"
+                  className="group relative overflow-hidden bg-gradient-to-br from-zinc-900 to-zinc-950 p-5 rounded-xl border border-zinc-800 hover:border-red-500/50 transition-all duration-300"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-red-500/10 flex items-center justify-center group-hover:bg-red-500/20 group-hover:scale-110 transition-all duration-300">
-                      <Rocket className="text-red-500 w-6 h-6" />
+                    <div className="w-12 h-12 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-white/10 group-hover:scale-110 transition-all duration-300 p-1">
+                      <img
+                        src={logoKaubry}
+                        alt="KauBry Apps"
+                        className="w-full h-full object-contain"
+                      />
                     </div>
                     <div>
                       <div className="font-bold text-white group-hover:text-red-500 transition-colors">KauBry Apps</div>
