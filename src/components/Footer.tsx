@@ -14,7 +14,7 @@ const Footer = () => {
           {/* Colonne 1 : Identité & Contact */}
           <div className="space-y-6">
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0 shadow-lg shadow-red-900/20 overflow-hidden border border-white/10">
+              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-red-600 to-red-800 flex items-center justify-center flex-shrink-0 shadow-lg shadow-red-900/20 overflow-hidden border border-white/10">
                 <img
                   src={logoClub}
                   alt="Logo AS Badminton Longuyon"
