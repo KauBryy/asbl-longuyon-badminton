@@ -47,7 +47,7 @@ const Club = () => {
                 </p>
                 <p>
                   Rejoignez-nous pour des moments sportifs et amicaux, et venez vous battre à nos côtés pendant les
-                  championnats des Interclubs en Division 5 !
+                  championnats des Interclubs en Division 4 !
                 </p>
               </div>
             </div>
@@ -78,8 +78,8 @@ const Club = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {member.photo ? (
-                  <img 
-                    src={member.photo} 
+                  <img
+                    src={member.photo}
                     alt={member.name}
                     className="w-24 h-24 mx-auto mb-4 rounded-full object-cover"
                   />
