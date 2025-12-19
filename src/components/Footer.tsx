@@ -146,7 +146,7 @@ const Footer = () => {
 
                 {/* KauBry Apps */}
                 <a
-                  href="https://www.linkedin.com/in/pierreaubryit"
+                  href="https://www.kaubry.fr"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative overflow-hidden bg-gradient-to-br from-zinc-900 to-zinc-950 p-5 rounded-xl border border-zinc-800 hover:border-red-500/50 transition-all duration-300"
@@ -219,11 +219,11 @@ const Footer = () => {
             {/* Crédits */}
             <div className="text-sm">
               <a
-                href="https://www.linkedin.com/in/pierreaubryit"
+                href="https://www.kaubry.fr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 text-zinc-500 hover:text-white transition-colors"
-                title="Voir le profil LinkedIn du développeur"
+                title="Voir le site de KauBry Apps"
               >
                 <span>Propulsé par</span>
                 <span className="font-bold text-red-500 group-hover:text-red-400">KauBry Apps</span>

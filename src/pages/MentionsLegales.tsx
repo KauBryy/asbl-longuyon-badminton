@@ -25,8 +25,8 @@ const MentionsLegales = () => {
                             <p className="mb-2"><strong>Statut :</strong> Entrepreneur Individuel</p>
                             <p>
                                 <strong>Site web :</strong>{" "}
-                                <a href="https://www.linkedin.com/in/pierreaubryit" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                                    Profil LinkedIn
+                                <a href="https://www.kaubry.fr" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                                    kaubry.fr
                                 </a>
                             </p>
                         </Card>
