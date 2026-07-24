@@ -11,7 +11,7 @@ const Home = () => {
   const stats = [
     { icon: Users, value: "29+", label: "Licenciés" },
     { icon: Trophy, value: String(yearsOfExistence), label: "Années d'existence" },
-    { icon: Calendar, value: "2", label: "Créneaux par semaine" },
+    { icon: Calendar, value: "3", label: "Créneaux par semaine" },
     { icon: Heart, value: "100%", label: "Convivialité" },
   ];
 

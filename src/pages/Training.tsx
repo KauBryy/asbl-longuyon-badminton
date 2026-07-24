@@ -8,14 +8,16 @@ const Training = () => {
       day: "Mercredi",
       items: [
         {
-          title: "Loisir",
-          time: "20h30 - 22h30",
-          description: "Jeu libre pour les licences \"loisir\"",
+          title: "Horaires Jeunes",
+          time: "18h30 - 20h00",
+          badge: "NOUVEAUTÉ 2026-2027",
+          isHighlight: true,
+          description: "Entraînement encadré toutes les semaines !",
         },
         {
-          title: "Compétition",
-          time: "20h45 - 22h15",
-          description: "Entraînement encadré pour les licences \"compétition\"",
+          title: "Horaires Adultes",
+          time: "20h00 - 22h30",
+          description: "Jeu libre",
         },
       ],
     },
@@ -23,9 +25,9 @@ const Training = () => {
       day: "Vendredi",
       items: [
         {
-          title: "Jeu Libre",
+          title: "Horaires Adultes",
           time: "20h30 - 22h30",
-          description: "Jeu libre pour tous",
+          description: "Jeu libre",
         },
       ],
     },
@@ -36,6 +38,9 @@ const Training = () => {
       {/* Hero */}
       <section className="relative h-[40vh] flex items-center justify-center bg-gradient-to-r from-primary to-secondary text-white">
         <div className="container mx-auto px-4 text-center">
+          <span className="inline-block px-4 py-1.5 mb-3 text-sm font-semibold rounded-full bg-white/20 backdrop-blur-md text-white border border-white/30">
+            ASBL 2026 - 2027
+          </span>
           <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in-up">Informations Pratiques</h1>
           <p className="text-xl md:text-2xl animate-fade-in">Horaires et lieux de pratique</p>
         </div>
@@ -45,15 +50,15 @@ const Training = () => {
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Nos créneaux</h2>
-            <p className="text-xl text-muted-foreground">Des sessions adaptées à tous les niveaux</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Nos créneaux 2026-2027</h2>
+            <p className="text-xl text-muted-foreground">Des sessions adaptées aux jeunes et aux adultes</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {schedules.map((schedule, index) => (
               <Card
                 key={index}
-                className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in"
+                className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in border-2"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex flex-col h-full">
@@ -66,15 +71,31 @@ const Training = () => {
 
                   <div className="space-y-6 flex-1">
                     {schedule.items.map((item, itemIndex) => (
-                      <div key={itemIndex} className={`space-y-2 ${itemIndex !== 0 ? 'pt-4 border-t border-border/50' : ''}`}>
+                      <div
+                        key={itemIndex}
+                        className={`space-y-2.5 ${itemIndex !== 0 ? 'pt-5 border-t border-border/60' : ''} ${
+                          item.isHighlight ? 'p-4 rounded-xl bg-red-50/80 border border-red-200' : ''
+                        }`}
+                      >
                         <div className="flex items-center justify-between flex-wrap gap-2">
-                          <h4 className="font-bold text-lg">{item.title}</h4>
-                          <span className="text-sm font-semibold px-3 py-1 bg-primary/5 text-primary rounded-full">
+                          <div className="flex items-center gap-2">
+                            <h4 className={`font-bold text-lg ${item.isHighlight ? 'text-red-700' : ''}`}>
+                              {item.title}
+                            </h4>
+                            {item.badge && (
+                              <span className="text-[11px] font-extrabold px-2.5 py-0.5 bg-red-600 text-white rounded-full uppercase tracking-wider shadow-sm">
+                                {item.badge}
+                              </span>
+                            )}
+                          </div>
+                          <span className={`text-sm font-bold px-3 py-1 rounded-full ${
+                            item.isHighlight ? 'bg-red-600 text-white' : 'bg-primary/10 text-primary'
+                          }`}>
                             {item.time}
                           </span>
                         </div>
-                        <p className="flex items-start gap-2 text-muted-foreground text-sm">
-                          <Users className="w-4 h-4 mt-1 flex-shrink-0" />
+                        <p className={`flex items-start gap-2 text-sm ${item.isHighlight ? 'text-red-900 font-semibold' : 'text-muted-foreground'}`}>
+                          <Users className={`w-4 h-4 mt-0.5 flex-shrink-0 ${item.isHighlight ? 'text-red-600' : ''}`} />
                           <span>{item.description}</span>
                         </p>
                       </div>

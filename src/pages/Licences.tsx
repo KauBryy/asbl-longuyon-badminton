@@ -9,8 +9,11 @@ const Licences = () => {
       {/* Hero */}
       <section className="relative h-[40vh] flex items-center justify-center bg-gradient-to-r from-primary to-secondary text-white">
         <div className="container mx-auto px-4 text-center">
+          <span className="inline-block px-4 py-1.5 mb-3 text-sm font-semibold rounded-full bg-white/20 backdrop-blur-md text-white border border-white/30">
+            Saison 2026 - 2027
+          </span>
           <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in-up">Nos Licences</h1>
-          <p className="text-xl md:text-2xl animate-fade-in">Tarifs et informations</p>
+          <p className="text-xl md:text-2xl animate-fade-in">Tarif unique et informations d'inscription</p>
         </div>
       </section>
 
@@ -18,89 +21,70 @@ const Licences = () => {
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Tarifs des licences</h2>
-            <p className="text-xl text-muted-foreground">Paiement par virement bancaire (infos données sur place)</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Tarif de la licence 2026-2027</h2>
+            <p className="text-xl text-muted-foreground">Un tarif unique pour tous • Paiement par virement bancaire (infos sur place)</p>
           </div>
 
-          {/* Tarifs et Détails par catégorie */}
-          <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
-
-            {/* Colonne Loisir */}
-            <Card className="p-8 hover:shadow-xl transition-all duration-300 border-2 flex flex-col h-full bg-white/50">
-              <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold mb-6 text-primary">Loisir</h3>
-                <div className="space-y-4">
-                  <div className="p-4 bg-background rounded-lg border">
-                    <p className="text-lg font-semibold">Adulte Loisir</p>
-                    <div className="text-4xl font-bold text-primary">90€</div>
-                    <p className="text-sm text-muted-foreground">Par an</p>
-                  </div>
-                  <div className="p-4 bg-background rounded-lg border">
-                    <p className="text-lg font-semibold">Jeune Loisir</p>
-                    <div className="text-4xl font-bold text-primary">80€</div>
-                    <p className="text-sm text-muted-foreground">Par an</p>
-                  </div>
+          {/* Tarif Unique */}
+          <div className="max-w-3xl mx-auto mb-16">
+            <Card className="p-8 md:p-10 hover:shadow-2xl transition-all duration-300 border-2 border-primary/30 bg-gradient-to-b from-primary/5 via-background to-background relative overflow-hidden">
+              <div className="text-center mb-8 pt-4 md:pt-0">
+                <h3 className="text-2xl md:text-3xl font-bold mb-2 text-primary">Licence FFBAD - Saison Complète</h3>
+                <p className="text-muted-foreground mb-4">Accès à l'ensemble du club pour la saison 2026-2027 (Adultes & Jeunes)</p>
+                <div className="inline-flex items-baseline gap-2 bg-background px-8 py-4 rounded-2xl border border-primary/20 shadow-inner">
+                  <span className="text-5xl md:text-6xl font-black text-primary">100€</span>
+                  <span className="text-lg text-muted-foreground font-medium">/ an</span>
                 </div>
+                <p className="text-sm text-emerald-600 font-semibold mt-3 flex items-center justify-center gap-1">
+                  <span>💡</span> Éligible au Pass'Sport : la licence revient à seulement <strong>30€</strong> avec l'aide !
+                </p>
               </div>
 
-              <div className="flex-grow">
-                <h4 className="text-xl font-bold mb-4">Ta licence "loisir" comprend :</h4>
-                <div className="space-y-3">
+              <div className="border-t border-border pt-8 space-y-6">
+                <h4 className="text-xl font-bold text-center mb-4">Ce que comprend votre licence :</h4>
+
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {/* Adultes */}
+                  <div className="p-4 rounded-xl bg-primary/5 border border-primary/10">
+                    <div className="font-bold text-primary mb-2 flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-primary"></span>
+                      Créneaux Adultes (Jeu libre)
+                    </div>
+                    <ul className="text-sm space-y-1.5 text-muted-foreground">
+                      <li>• <strong>Mercredi :</strong> 20h00 - 22h30</li>
+                      <li>• <strong>Vendredi :</strong> 20h30 - 22h30</li>
+                    </ul>
+                  </div>
+
+                  {/* Jeunes */}
+                  <div className="p-4 rounded-xl bg-red-50 border border-red-200">
+                    <div className="font-bold text-red-600 mb-2 flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-red-600"></span>
+                      Créneau Jeunes (Nouveauté !)
+                    </div>
+                    <ul className="text-sm space-y-1.5 text-zinc-700">
+                      <li>• <strong>Mercredi :</strong> 18h30 - 20h00</li>
+                      <li className="font-semibold text-red-600">Entraînement encadré toutes les semaines !</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="space-y-3 pt-2">
                   {[
-                    "L'accès aux séances 'jeu libre' les mercredis et les vendredis soirs",
-                    "La fourniture des volants hybrides pour ces créneaux",
-                    "La licence / assurance à la Fédération Française de Badminton (FFBad)",
+                    "La fourniture des volants hybrides pour tous les créneaux",
+                    "La licence & assurance à la Fédération Française de Badminton (FFBad)",
                     "L'inscription (si volontaire) aux championnats régionaux (tournois) et départementaux (interclubs)",
-                    "L'accès à une salle comportant 4 terrains de doubles et 2 terrains de simples",
-                    "L'abonnement d'un an à Badminton Magazine en version numérique (disponible sur le compte MyFFBAD des licencié.e.s)",
+                    "L'accès à la Salle Léo Lagrange (4 terrains de doubles et 2 terrains de simples)",
+                    "L'abonnement d'un an à Badminton Magazine en version numérique",
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                      <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                       <span className="text-sm">{item}</span>
                     </div>
                   ))}
                 </div>
               </div>
-
-              <div className="mt-8 p-4 bg-amber-50 border border-amber-200 rounded-lg text-amber-800 text-sm font-medium flex items-start gap-3">
-                <span className="text-lg">⚠️</span>
-                <p>Attention : la licence "loisir" ne permet donc pas d'assister à l'entraînement encadré du mercredi soir !</p>
-              </div>
             </Card>
-
-            {/* Colonne Compétition */}
-            <Card className="p-8 hover:shadow-xl transition-all duration-300 border-2 border-primary/20 flex flex-col h-full bg-primary/5">
-              <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold mb-6 text-primary">Compétition</h3>
-                <div className="space-y-4">
-                  <div className="p-4 bg-background rounded-lg border border-primary/20 shadow-sm">
-                    <p className="text-lg font-semibold">Jeune Compétition</p>
-                    <div className="text-4xl font-bold text-primary">140€</div>
-                    <p className="text-sm text-muted-foreground">Par an</p>
-                  </div>
-                  <div className="p-4 bg-background rounded-lg border border-primary/20 shadow-sm">
-                    <p className="text-lg font-semibold">Adulte Compétition</p>
-                    <div className="text-4xl font-bold text-primary">140€</div>
-                    <p className="text-sm text-muted-foreground">Par an</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex-grow">
-                <h4 className="text-xl font-bold mb-4">Ta licence "compétition" comprend :</h4>
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                    <span className="text-sm font-semibold">Tous les avantages de la licence Loisir</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                    <span className="text-sm">PLUS : L'accès à l'entraînement dispensé par une entraîneuse qualifiée tous les mercredis de 20h45 à 22h15</span>
-                  </div>
-                </div>
-              </div>
-            </Card>
-
           </div>
         </div>
       </section>
