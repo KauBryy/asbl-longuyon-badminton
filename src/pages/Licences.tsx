@@ -41,23 +41,25 @@ const Licences = () => {
               </div>
 
               {/* Bloc Dates d'inscription et de validité */}
-              <div className="mb-8 p-4 rounded-xl bg-blue-50/90 border border-blue-200 text-blue-950 text-sm shadow-sm">
-                <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-blue-600 text-white flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Calendar className="w-5 h-5" />
-                  </div>
-                  <div className="flex-1 space-y-1">
-                    <p className="font-bold text-blue-900 text-base">Dates de la saison 2026-2027</p>
-                    <div className="grid sm:grid-cols-2 gap-2 pt-1 text-xs md:text-sm">
-                      <div className="flex items-center gap-1.5 text-blue-800">
-                        <Info className="w-4 h-4 text-blue-600 flex-shrink-0" />
-                        <span><strong>Délais d'adhésion :</strong> du 01/06/2026 au 30/04/2027</span>
-                      </div>
-                      <div className="flex items-center gap-1.5 text-blue-800">
-                        <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                        <span><strong>Validité licence :</strong> du 01/09/2026 au 31/08/2027</span>
-                      </div>
+              <div className="mb-8">
+                <p className="font-bold text-center text-lg mb-4 flex items-center justify-center gap-2">
+                  <Calendar className="w-5 h-5 text-primary" />
+                  Dates de la saison 2026-2027
+                </p>
+                <div className="grid sm:grid-cols-2 gap-3">
+                  <div className="flex flex-col items-center text-center p-5 rounded-xl bg-blue-50 border border-blue-200 transition-all duration-200 hover:shadow-md">
+                    <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center mb-3">
+                      <Info className="w-5 h-5" />
                     </div>
+                    <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 mb-1">Inscriptions ouvertes</span>
+                    <span className="text-lg font-bold text-blue-900">01/06/2026 — 30/04/2027</span>
+                  </div>
+                  <div className="flex flex-col items-center text-center p-5 rounded-xl bg-emerald-50 border border-emerald-200 transition-all duration-200 hover:shadow-md">
+                    <div className="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center mb-3">
+                      <Check className="w-5 h-5" />
+                    </div>
+                    <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600 mb-1">Validité de la licence</span>
+                    <span className="text-lg font-bold text-emerald-900">01/09/2026 — 31/08/2027</span>
                   </div>
                 </div>
               </div>
