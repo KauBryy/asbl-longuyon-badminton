@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Check, ExternalLink, Download } from "lucide-react";
+import { Check, ExternalLink, Download, Calendar, Info } from "lucide-react";
 import passSportLogo from "@/assets/pass-sport-logo.png";
 
 const Licences = () => {
@@ -30,7 +30,7 @@ const Licences = () => {
             <Card className="p-8 md:p-10 hover:shadow-2xl transition-all duration-300 border-2 border-primary/30 bg-gradient-to-b from-primary/5 via-background to-background relative overflow-hidden">
               <div className="text-center mb-8 pt-4 md:pt-0">
                 <h3 className="text-2xl md:text-3xl font-bold mb-2 text-primary">Licence FFBAD - Saison Complète</h3>
-                <p className="text-muted-foreground mb-4">Accès à l'ensemble du club pour la saison 2026-2027 (Adultes & Jeunes)</p>
+                <p className="text-muted-foreground mb-4">Adhésion au club donnant droit à une licence fédérale (Adultes & Jeunes)</p>
                 <div className="inline-flex items-baseline gap-2 bg-background px-8 py-4 rounded-2xl border border-primary/20 shadow-inner">
                   <span className="text-5xl md:text-6xl font-black text-primary">100€</span>
                   <span className="text-lg text-muted-foreground font-medium">/ an</span>
@@ -38,6 +38,28 @@ const Licences = () => {
                 <p className="text-sm text-emerald-600 font-semibold mt-3 flex items-center justify-center gap-1">
                   <span>💡</span> Éligible au Pass'Sport : la licence revient à seulement <strong>30€</strong> avec l'aide !
                 </p>
+              </div>
+
+              {/* Bloc Dates d'inscription et de validité */}
+              <div className="mb-8 p-4 rounded-xl bg-blue-50/90 border border-blue-200 text-blue-950 text-sm shadow-sm">
+                <div className="flex items-start gap-3">
+                  <div className="w-9 h-9 rounded-lg bg-blue-600 text-white flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Calendar className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1 space-y-1">
+                    <p className="font-bold text-blue-900 text-base">Dates de la saison 2026-2027</p>
+                    <div className="grid sm:grid-cols-2 gap-2 pt-1 text-xs md:text-sm">
+                      <div className="flex items-center gap-1.5 text-blue-800">
+                        <Info className="w-4 h-4 text-blue-600 flex-shrink-0" />
+                        <span><strong>Délais d'adhésion :</strong> du 01/06/2026 au 30/04/2027</span>
+                      </div>
+                      <div className="flex items-center gap-1.5 text-blue-800">
+                        <Check className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                        <span><strong>Validité licence :</strong> du 01/09/2026 au 31/08/2027</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div className="border-t border-border pt-8 space-y-6">
@@ -183,7 +205,10 @@ const Licences = () => {
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">Demander une licence</h2>
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold mb-2">Demander une licence</h2>
+              <p className="text-sm text-muted-foreground">Inscriptions ouvertes du <strong>01/06/2026</strong> au <strong>30/04/2027</strong> • Licence valable du <strong>01/09/2026</strong> au <strong>31/08/2027</strong></p>
+            </div>
             <div className="grid md:grid-cols-2 gap-6">
               <Card className="p-6 hover:shadow-xl transition-all duration-300">
                 <h3 className="text-xl font-bold mb-4">Nouvelle licence</h3>
