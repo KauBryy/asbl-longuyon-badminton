@@ -40,29 +40,61 @@ const Licences = () => {
                 </p>
               </div>
 
-              {/* Bloc Dates d'inscription et de validité */}
-              <div className="mb-8">
-                <p className="font-bold text-center text-lg mb-4 flex items-center justify-center gap-2">
-                  <Calendar className="w-5 h-5 text-primary" />
-                  Dates de la saison 2026-2027
-                </p>
-                <div className="grid sm:grid-cols-2 gap-3">
-                  <div className="flex flex-col items-center text-center p-5 rounded-xl bg-blue-50 border border-blue-200 transition-all duration-200 hover:shadow-md">
-                    <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center mb-3">
-                      <Info className="w-5 h-5" />
-                    </div>
-                    <span className="text-xs font-semibold uppercase tracking-wider text-blue-600 mb-1">Inscriptions ouvertes</span>
-                    <span className="text-lg font-bold text-blue-900">01/06/2026 — 30/04/2027</span>
+              {/* Timeline visuelle des dates de la saison */}
+              <div className="mb-8 p-5 md:p-6 rounded-2xl bg-slate-50/80 border border-slate-200/60 shadow-sm">
+                <div className="flex items-center gap-2.5 mb-6">
+                  <div className="p-2 rounded-xl bg-primary/10 text-primary">
+                    <Calendar className="w-5 h-5" />
                   </div>
-                  <div className="flex flex-col items-center text-center p-5 rounded-xl bg-emerald-50 border border-emerald-200 transition-all duration-200 hover:shadow-md">
-                    <div className="w-10 h-10 rounded-full bg-emerald-600 text-white flex items-center justify-center mb-3">
-                      <Check className="w-5 h-5" />
-                    </div>
-                    <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600 mb-1">Validité de la licence</span>
-                    <span className="text-lg font-bold text-emerald-900">01/09/2026 — 31/08/2027</span>
+                  <div>
+                    <h4 className="font-bold text-slate-900 text-base">Dates de la Saison 2026 – 2027</h4>
+                    <p className="text-xs text-muted-foreground">Repères chronologiques de l'adhésion et de la licence</p>
                   </div>
                 </div>
-              </div>
+
+                <div className="space-y-6">
+                  {/* Barre 1 : Inscriptions / Adhésion */}
+                  <div className="space-y-2">
+                    <span className="font-semibold text-sm text-slate-800 flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
+                      Inscriptions & Adhésions
+                    </span>
+
+                    <div className="relative h-8 w-full bg-slate-200/60 rounded-full overflow-hidden p-1 flex items-center">
+                      <div 
+                        className="h-full bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full shadow-sm flex items-center justify-between px-3.5 text-xs font-semibold text-white"
+                        style={{ width: '73%' }}
+                      >
+                        <span>01 Juin 2026</span>
+                        <span className="hidden sm:inline opacity-90 text-[11px] font-normal">Inscriptions ouvertes</span>
+                        <span>30 Avril 2027</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Barre 2 : Validité Licence */}
+                  <div className="space-y-2">
+                    <span className="font-semibold text-sm text-slate-800 flex items-center gap-2">
+                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                      Validité de la licence FFBad
+                    </span>
+
+                    <div className="relative h-8 w-full bg-slate-200/60 rounded-full overflow-hidden p-1 flex items-center">
+                      <div className="w-full flex h-full">
+                        <div style={{ width: '20%' }} className="h-full flex-shrink-0"></div>
+                        <div 
+                          className="h-full bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full shadow-sm flex items-center justify-between px-3.5 text-xs font-semibold text-white flex-1"
+                        >
+                          <span>01 Sept 2026</span>
+                          <span className="hidden sm:inline opacity-90 text-[11px] font-normal">Saison sportive (12 mois)</span>
+                          <span>31 Août 2027</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  </div>
+                </div>
 
               <div className="border-t border-border pt-8 space-y-6">
                 <h4 className="text-xl font-bold text-center mb-4">Ce que comprend votre licence :</h4>
